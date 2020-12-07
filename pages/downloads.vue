@@ -4,8 +4,7 @@
     <p>Download the latest build.</p>
     <hr/>
     <p>Built from commit <a :href="builds.latestCommitData.html_url"><code>{{ builds.latestCommitData.sha }}</code></a>:<br/>
-    <strong>{{builds.latestCommitData.commit.message}}</strong><br/> by {{builds.latestCommitData.commit.author.name}} on {{$moment(builds.latestCommitData.commit.date).format("LLLL")}}.
-    </p>
+    <pre class="font-weight-bold">{{builds.latestCommitData.commit.message}}</pre><br/> by {{builds.latestCommitData.commit.author.name}} on {{$moment(builds.latestCommitData.commit.date).format("LLLL")}}.
     <hr/>
     <h2><i class="vgs-windows pr-3" style="color: #0078d6"></i>Windows</h2>
     <b-button-group vertical>
@@ -40,7 +39,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 
 i.vgs-hcs {
   font-size: revert;

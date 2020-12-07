@@ -63,6 +63,7 @@ export default {
     'bootstrap-vue/nuxt',
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/sitemap'
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -76,6 +77,24 @@ export default {
     http2: {
       push: true
     }
+  },
+
+  sitemap: {
+    hostname: 'https://vgmstream.org',
+    routes: [
+      '/about',
+      {
+        url: '/downloads',
+        changefreq: 'daily',
+        priority: 1,
+      },
+      '/doc',
+      '/doc/readme',
+      '/doc/dev',
+      '/doc/build',
+      '/doc/cmake',
+      '/doc/txtp',
+    ]
   },
 
   bootstrapVue: {

@@ -2,17 +2,21 @@
   <div>
     <b-navbar toggleable="md" type="dark" variant="primary" class="shadow" sticky>
       <b-navbar-brand to="/">vgmstream</b-navbar-brand>
-      <b-navbar-toggle target="nav-col"></b-navbar-toggle>
-      <b-collapse id="nav-col" is-nav>
-        <b-navbar-nav>
-          <b-nav-item to="/about" active-class="active">About</b-nav-item>
-          <b-nav-item to="/downloads" active-class="active">Downloads</b-nav-item>
-          <b-nav-item to="/doc" active-class="active">Documentation</b-nav-item>
-        </b-navbar-nav>
-        <b-navbar-nav class="ml-auto" v-if="$route.name!=='index'">
-          <github-buttons  />
-        </b-navbar-nav>
-      </b-collapse>
+      <transition name="fade">
+        <b-navbar-toggle target="nav-col"  v-if="$route.name !== 'index'"></b-navbar-toggle>
+      </transition>
+      <transition name="fade">
+        <b-collapse id="nav-col" is-nav  v-if="$route.name !== 'index'">
+          <b-navbar-nav>
+            <b-nav-item to="/about" active-class="active">About</b-nav-item>
+            <b-nav-item to="/downloads" active-class="active">Downloads</b-nav-item>
+            <b-nav-item to="/doc" active-class="active">Documentation</b-nav-item>
+          </b-navbar-nav>
+          <b-navbar-nav class="ml-auto">
+            <github-buttons  />
+          </b-navbar-nav>
+        </b-collapse>
+      </transition>
     </b-navbar>
     <b-container class="py-3">
       <Nuxt/>

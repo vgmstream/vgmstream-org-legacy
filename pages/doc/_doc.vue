@@ -12,8 +12,10 @@
 
 <script>
 export default {
-  head: {
-    title: "Documentation"
+  head() {
+    return {
+      title: this.title
+    }
   },
   async asyncData(context) {
     const docArray = ['readme', 'build', 'cmake', 'dev', 'genh', 'txth', 'txtp']
@@ -33,7 +35,7 @@ export default {
           "accept": "application/vnd.github.v3.html"
         }
       })
-      return {mdHtml: dt.data.replace("CMAKE.md", "cmake"), url: `${repoBaseUrl}${fileName}`}
+      return {mdHtml: dt.data.replace("CMAKE.md", "cmake"), title: fileName === "README.md" ? "README" :  dt.data.match(/<h1>(.*)<\/h1>/i)[1].replace(/(<([^>]+)>)/gi, ""), url: `${repoBaseUrl}${fileName}`}
     }
   }
 }
