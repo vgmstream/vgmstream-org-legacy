@@ -1,6 +1,9 @@
 <template>
   <div>
-    <b-jumbotron class="text-center" header="vgmstream" lead="Software for playing a wide variety of audio formats used in video games.">
+    <b-jumbotron class="text-center"lead="Software for playing a wide variety of audio formats used in video games.">
+      <template slot="header">
+        <i class="vgs-vgmstream"><span class="path1"></span><span class="path2"></span></i> vgmstream
+      </template>
       <p>Available for:</p>
       <div class="text-center iconcarrousel pb-3">
         <i class="vgs-terminal" title="Command line"></i>
