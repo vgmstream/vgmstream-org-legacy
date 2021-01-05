@@ -12,6 +12,12 @@ export default {
         async: true,
         defer: true,
         src: 'https://buttons.github.io/buttons.js'
+      },
+      {
+        async: true,
+        defer: true,
+        'data-domain': 'vgmstream.org',
+        src: 'https://plausible.io/js/plausible.js'
       }
     ],
     link: [
