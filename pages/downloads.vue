@@ -4,7 +4,7 @@
     <p>Download the latest build.</p>
     <hr/>
     <p>Built from commit <a :href="builds.latestCommitData.html_url"><code>{{ builds.latestCommitData.sha }}</code></a>:<br/>
-    <pre class="font-weight-bold">{{builds.latestCommitData.commit.message}}</pre><br/> by {{builds.latestCommitData.commit.author.name}} on {{$moment(builds.latestCommitData.commit.date).format("LLLL")}}.
+    <pre class="font-weight-bold">{{builds.latestCommitData.commit.message}}</pre><br/> by {{builds.latestCommitData.commit.author.name}} on {{$moment(builds.latestCommitData.commit.author.date).format("LLLL ZZ")}}.
     <hr/>
     <h2><i class="vgs-windows pr-3" style="color: #0078d6"></i>Windows</h2>
     <b-button-group vertical>
