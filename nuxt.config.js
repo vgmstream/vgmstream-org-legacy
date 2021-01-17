@@ -36,8 +36,6 @@ export default {
       { rel: 'icon', type: 'image/png', href: '/favicon-16x16.png', sizes: '16x16' },
       { rel: 'manifest', href: "/manifest.json"},
       { rel: 'stylesheet', href: "https://balde.losno.co/vgs/style.css"},
-      { rel: 'stylesheet', href: "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@700&display=swap"}
-
     ]
   },
 

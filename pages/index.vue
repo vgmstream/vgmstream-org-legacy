@@ -9,12 +9,12 @@
         <i class="vgs-terminal" title="Command line"></i>
         <a href="https://getwacup.com/" title="Winamp (link goes to WACUP)"><i class="vgs-winamp" ><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span></i></a>
         <a href="https://foobar2000.org" title="foobar2000"><i class="vgs-foobar2000" ><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i></a>
-        <a href="https://www.un4seen.com/xmplay.html" title="XMPlay"><img srcset="icons/xmplay.png 1x, icons/xmplay@2x.png 2x, icons/xmplay@3x.png 3x" style="width: 48pt; margin-bottom: 0.25em;" /></a>
+        <a href="https://www.un4seen.com/xmplay.html" title="XMPlay"><i class="vgs-xmplay"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></i></a>
         <a href="https://audacious-media-player.org/" title="Audacious Media Player"><i class="vgs-audacious" ><span class="path1"></span><span class="path2"></span><span class="path3"></span></i></a>
       </div>
       <p>Built into:</p>
-      <div class="text-center  pb-3">
-        <a href="https://kode54.net/cog" title="Cog"><img srcset="icons/cog.png 1x, icons/cog@2x.png 2x" style="width: 48pt; margin-bottom: 0.25em;" /></a>
+      <div class="text-center iconcarrousel pb-3">
+        <a href="https://kode54.net/cog" title="Cog"><i class="vgs-cog"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i></a>
       </div>
       <b-button-group >
         <b-button to="/about">About</b-button>
