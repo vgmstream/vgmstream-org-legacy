@@ -17,7 +17,7 @@ export default {
         async: true,
         defer: true,
         'data-domain': 'vgmstream.org',
-        src: 'https://plausible.io/js/plausible.js'
+        src: 'https://pl.lopez-snowhill.net/js/plausible.js'
       }
     ],
     link: [
