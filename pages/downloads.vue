@@ -8,7 +8,7 @@
     <hr/>
     <h2><i class="vgs-windows pr-3" style="color: #0078d6"></i>Windows</h2>
     <b-button-group vertical>
-      <b-btn :href="`https://vgmstream-builds.s3-us-west-1.amazonaws.com/${builds.latestCommitData.sha}/windows/test.zip`" size="lg" variant="success"><div class="d-inline-flex">
+      <b-btn :href="`https://vgmstream-builds.s3-us-west-1.amazonaws.com/${builds.latestCommitData.sha}/windows/vgmstream-win.zip`" size="lg" variant="success"><div class="d-inline-flex">
         <i class="vgs-terminal"></i> <i class="vgs-winamp"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span></i><i class="vgs-xmplay"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></i>Command-line tools, Winamp and XMPlay plug-ins
       </div> </b-btn>
       <b-btn :href="`https://vgmstream-builds.s3-us-west-1.amazonaws.com/${builds.latestCommitData.sha}/windows/foo_input_vgmstream.fb2k-component`" size="lg" variant="success" class="text-left"><div class="d-inline-flex"><i class="vgs-foobar2000 mr-2"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i>foobar2000 component</div></b-btn>
