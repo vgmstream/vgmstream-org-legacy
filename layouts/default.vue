@@ -16,10 +16,10 @@
           </b-collapse>
       </b-navbar>
     </transition>
-    <b-container class="py-3">
+    <b-container class="py-3 vg-push">
       <Nuxt/>
     </b-container>
-    <footer class="footer mt-auto py-3 bg-light">
+    <footer class="footer mt-auto py-3 bg-light fixed-bottom" >
       <b-container>
         <div class="clearfix">
           <div class="float-left">
@@ -89,5 +89,6 @@ html {
 .vgs-hcs {
   font-size: unset !important;
 }
+
 
 </style>

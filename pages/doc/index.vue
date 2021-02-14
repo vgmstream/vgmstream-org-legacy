@@ -2,11 +2,7 @@
   <div>
     <h1>vgmstream documentation</h1>
     <b-list-group>
-      <b-list-group-item to="/doc/readme">README</b-list-group-item>
-      <b-list-group-item to="/doc/dev">Development help</b-list-group-item>
-      <b-list-group-item to="/doc/build">Building instructions</b-list-group-item>
-      <b-list-group-item to="/doc/cmake">Building instructions for CMake</b-list-group-item>
-      <b-list-group-item to="/doc/txtp">Info about the <code>TXTP</code> format</b-list-group-item>
+      <b-list-group-item v-for="(item, index) in pages" :key="index" :to="`/doc${item.path}`">{{item.title}}</b-list-group-item>
     </b-list-group>
   </div>
 </template>
@@ -15,6 +11,9 @@
 export default {
   head: {
     title: "Documentation"
+  },
+  async asyncData ({ $content }) {
+    return {pages: await $content().only(['title']).fetch()}
   }
 }
 </script>
