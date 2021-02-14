@@ -13,7 +13,7 @@ export default {
     title: "Documentation"
   },
   async asyncData ({ $content }) {
-    return {pages: await $content().only(['title']).fetch()}
+    return {pages: await $content().only(['title', 'path']).fetch()}
   }
 }
 </script>
