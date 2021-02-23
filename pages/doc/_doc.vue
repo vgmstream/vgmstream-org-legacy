@@ -12,8 +12,13 @@ export default {
       title: this.page.title
     }
   },
-  async asyncData(context) {
-    const page = await context.$content(context.route.params.doc).fetch().catch((err) => {
+  middleware({redirect, route: {params}}) {
+    if (params.doc !== params.doc.toUpperCase()) {
+      redirect(`/doc/${params.doc.toUpperCase()}`)
+    }
+  },
+  async asyncData({$content, error, route: {params}}) {
+    const page = await $content(params.doc).fetch().catch((err) => {
       error({ statusCode: 404, message: 'Page not found' })
     })
 

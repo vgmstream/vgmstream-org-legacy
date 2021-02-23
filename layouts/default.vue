@@ -16,7 +16,7 @@
           </b-collapse>
       </b-navbar>
     </transition>
-    <b-container class="py-3 vg-push">
+    <b-container class="pt-3 pb-5 vg-push">
       <Nuxt/>
     </b-container>
     <footer class="footer mt-auto py-3 bg-light fixed-bottom" >

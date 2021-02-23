@@ -1,3 +1,5 @@
+import generateSitemapRoutes from './sitemapRouteGen';
+
 export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
@@ -35,6 +37,7 @@ export default {
       { rel: 'icon', type: 'image/png', href: '/favicon-96x96.png', sizes: '96x96' },
       { rel: 'icon', type: 'image/png', href: '/favicon-16x16.png', sizes: '16x16' },
       { rel: 'manifest', href: "/manifest.json"},
+      { rel: 'preload', href: "https://balde.losno.co/vgs/style.css", as: "style" },
       { rel: 'stylesheet', href: "https://balde.losno.co/vgs/style.css"},
     ]
   },
@@ -86,20 +89,9 @@ export default {
 
   sitemap: {
     hostname: 'https://vgmstream.org',
-    routes: [
-      '/about',
-      {
-        url: '/downloads',
-        changefreq: 'daily',
-        priority: 1,
-      },
-      '/doc',
-      '/doc/readme',
-      '/doc/dev',
-      '/doc/build',
-      '/doc/cmake',
-      '/doc/txtp',
-    ]
+    routes() {
+      return generateSitemapRoutes()
+    }
   },
 
   bootstrapVue: {

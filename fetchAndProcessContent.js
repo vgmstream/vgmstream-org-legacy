@@ -47,7 +47,7 @@ function getFirstLine(text) {
     let firstLine = getFirstLine(fileContents).trim().replace("# ", "")
 
     let frontMatter = {
-      title: (normalizedFileName === "readme.md" ? "README" : firstLine),
+      title: (normalizedFileName === "README.md" ? "README" : firstLine),
       createdAt: new Date(Date.parse(last)),
       updatedAt: new Date(Date.parse(first))
     }
