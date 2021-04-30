@@ -19,7 +19,7 @@ export default {
         async: true,
         defer: true,
         'data-domain': 'vgmstream.org',
-        src: 'https://pl.lopez-snowhill.net/js/plausible.js'
+        src: 'https://pl.lopez-snowhill.net/essential.js'
       }
     ],
     link: [
