@@ -1,5 +1,10 @@
 <template>
   <div>
+    <b-navbar type="dark" variant="dark" class="shadow">
+	<b-navbar-nav class="text-center mx-auto">
+		<b-nav-text class="text-white">RIP Near</b-nav-text>
+	</b-navbar-nav>
+    </b-navbar>
     <transition name="fade2">
       <b-navbar toggleable="md" type="dark" variant="primary" class="shadow" sticky v-if="$route.name !== 'index'">
         <b-navbar-brand to="/">vgmstream</b-navbar-brand>
