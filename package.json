@@ -10,7 +10,7 @@
     "fetch-content": "node fetchAndProcessContent.js"
   },
   "dependencies": {
-    "@nuxt/content": "^1.13.1",
+    "@nuxt/content": "^1.15.1",
     "@nuxtjs/axios": "5.13.1",
     "@nuxtjs/moment": "1.6.1",
     "@nuxtjs/sitemap": "2.4.0",
