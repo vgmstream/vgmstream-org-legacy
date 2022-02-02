@@ -17,7 +17,7 @@
     "axios": "^0.21.1",
     "bootstrap": "4.6.0",
     "bootstrap-vue": "2.21.2",
-    "core-js": "3.9.0",
+    "core-js": "3.21.0",
     "glob": "^7.1.6",
     "js-yaml": "^4.0.0",
     "node-sass": "5.0.0",
