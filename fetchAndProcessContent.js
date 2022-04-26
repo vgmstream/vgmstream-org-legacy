@@ -1,10 +1,38 @@
-const Git = require("nodegit");
-const fs = require("fs");
+const path = require('path')
+const git = require('isomorphic-git')
+const http = require('isomorphic-git/http/node')
+const fs = require('fs')
+
 const glob = require("glob");
-const path = require("path");
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 const yaml = require('js-yaml');
+
+const author = {
+  name: 'Kevin López',
+  email: 'kevin@kddlb.cl'
+}
+
+const dir = path.join(process.cwd(), 'data')
+
+if (fs.existsSync(dir)) {
+
+  console.log('data directory exists, pulling from remote')
+
+  git.pull({
+    fs, http, dir, author
+  }).then(parse)
+
+} else {
+
+  console.log('data directory does not exist, cloning from remote')
+
+  git.clone({
+    fs, http, dir, author,
+    url: 'https://github.com/vgmstream/vgmstream'
+  }).then(parse)
+
+}
 
 function getFirstLine(text) {
   let index = text.indexOf("\n");
@@ -12,57 +40,46 @@ function getFirstLine(text) {
   return text.substring(0, index);
 }
 
-(async () => {
-
-  if (fs.existsSync("../vgmstream")) {
-    console.log("Copy of repo exists...")
-    let repo = await Git.Repository.open("../vgmstream")
-    console.log("Fetching remote...")
-    await repo.fetchAll()
-    console.log("Merging remote with local...")
-    await repo.mergeBranches("master", "origin/master")
-
-  } else {
-    console.log("Cloning repo...")
-    await Git.Clone("https://github.com/vgmstream/vgmstream","../vgmstream")
-  }
-
-  const files = glob.sync("../vgmstream/**/*.md");
+function parse() {
+  const files = glob.sync(path.join(dir, '**/*.md'))
 
   if (fs.existsSync(path.join(__dirname, "content"))) {
-    fs.rmdirSync(path.join(__dirname, "content"), { recursive: true })
+    fs.rmSync(path.join(__dirname, "content"), { recursive: true })
   }
   fs.mkdirSync(path.join(__dirname, "content"))
 
   for (const file of files) {
-    const normalizedFileName = path.basename(file);
-    const gitFileName = file.replace("../vgmstream/",'')
-    const {stdout: log} = await exec("git --no-pager log --pretty=format:\"%ad\" --date=iso-strict -- " + gitFileName, {
-      cwd: "../vgmstream"
-    })
-    const array = log.split("\n")
-    const {first, last} = {first: array[0], last: array[array.length-1]}
-    console.log(`Copying ${file} to content/...`)
-    let fileContents = fs.readFileSync(file, "utf-8")
-    let firstLine = getFirstLine(fileContents).trim().replace("# ", "")
+    const normalized = path.basename(file)
+    const relative = path.relative(dir, file)
+    const log = git.log({
+      fs,
+      dir,
+      filepath: relative,
+      depth: 0
+    }).then((result) => {
+      var commitDate = new Date(result[0].commit.author.timestamp * 1000)
 
-    let frontMatter = {
-      title: (normalizedFileName === "README.md" ? "README" : firstLine),
-      createdAt: new Date(Date.parse(last)),
-      updatedAt: new Date(Date.parse(first))
-    }
+      console.log(`Copying ${normalized} to content/...`)
+      let fileContents = fs.readFileSync(file, 'utf8')
+      let firstLine = getFirstLine(fileContents).trim().replace("# ", "")
 
-    const regex = /\((.*)\.md\)/gm;
+      let frontMatter = {
+        title: (normalized === "README.md" ? "README" : firstLine),
+        updatedAt: commitDate
+      }
 
-    let newFileContents = `---
+      const regex = /\((.*)\.md\)/gm;
+
+      let newFileContents = `---
 ${yaml.dump(frontMatter)}
 ---
 ${fileContents}
 `.replace(regex, `($1)`)
 
-    fs.writeFileSync(path.join(__dirname, "content", normalizedFileName), newFileContents, {encoding: "utf-8"})
-    console.log(`${normalizedFileName} processed.`)
+
+      fs.writeFileSync(path.join(__dirname, "content", normalized), newFileContents, {encoding: "utf-8"})
+      console.log(`${normalized} processed.`)
+    })
   }
 
-
-})()
+}

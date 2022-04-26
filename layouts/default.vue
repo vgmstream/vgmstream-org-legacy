@@ -18,48 +18,35 @@
           <b-navbar-nav>
             <b-nav-item to="/about" active-class="active">About</b-nav-item>
             <b-nav-item to="/downloads" active-class="active"
-              >Downloads</b-nav-item
+            >Downloads
+            </b-nav-item
             >
             <b-nav-item to="/doc" active-class="active"
-              >Documentation</b-nav-item
+            >Documentation
+            </b-nav-item
             >
           </b-navbar-nav>
           <b-navbar-nav class="ml-auto">
-            <github-buttons />
+            <github-buttons/>
           </b-navbar-nav>
         </b-collapse>
       </b-navbar>
     </transition>
     <b-container class="pt-3 pb-5 vg-push">
-      <Nuxt />
+      <Nuxt/>
     </b-container>
     <footer class="footer mt-auto py-3 bg-light fixed-bottom">
       <b-container>
         <div class="clearfix">
           <div class="float-left">
             <span class="text-muted"
-              >A project of
+            >A project of
               <a href="https://hcs64.com"
-                ><i class="vgs-hcs"
-                  ><span class="path1"></span><span class="path2"></span
-                  ><span class="path3"></span><span class="path4"></span
-                  ><span class="path5"></span><span class="path6"></span
-                  ><span class="path7"></span
-                ></i>
+              >
                 Halley's Comet Software</a
               >
               and
-              <a href="https://losno.co"
-                ><i class="vgs-losnoco"
-                  ><span class="path1"></span><span class="path2"></span
-                  ><span class="path3"></span><span class="path4"></span
-                  ><span class="path5"></span><span class="path6"></span
-                  ><span class="path7"></span><span class="path8"></span
-                  ><span class="path9"></span><span class="path10"></span
-                  ><span class="path11"></span><span class="path12"></span
-                  ><span class="path13"></span
-                  ><span class="path14"></span></i></a
-              >.</span
+              <a href="https://losno.co" class="losnocoLogo" ><span style="color:#F7931E;">LO</span><span style="color:#B479E0;">SNO</span>CO</a>.</span
             >
           </div>
           <div class="float-right">
@@ -101,6 +88,7 @@ html {
 .page-leave-active {
   transition: opacity 0.25s;
 }
+
 .page-enter,
 .page-leave-active {
   opacity: 0;
@@ -114,7 +102,9 @@ html {
 .fade-leave-active {
   transition: opacity 0.5s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */
+{
   opacity: 0;
 }
 
@@ -122,12 +112,19 @@ html {
 .fade2-leave-active {
   transition: all 0.5s;
 }
-.fade2-enter, .fade2-leave-to /* .fade-leave-active below version 2.1.8 */ {
+
+.fade2-enter, .fade2-leave-to /* .fade-leave-active below version 2.1.8 */
+{
   transform: scaleY(0);
   margin-top: -56px;
 }
 
 .vgs-hcs {
   font-size: unset !important;
+}
+
+.losnocoLogo {
+  font-weight: 900;
+  color: black;
 }
 </style>

@@ -14,7 +14,7 @@
       </div>
       <p>Built into:</p>
       <div class="text-center iconcarrousel pb-3">
-        <a href="https://kode54.net/cog" title="Cog"><i class="vgs-cog"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i></a>
+        <a href="https://cog.losno.co/" title="Cog"><i class="vgs-cog"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span></i></a>
       </div>
       <b-button-group >
         <b-button to="/about">About</b-button>
