@@ -6,7 +6,7 @@
     "dev": "yon fetch-content && nuxt",
     "build": "yon fetch-content && nuxt build",
     "start": "yon fetch-content && nuxt start",
-    "generate": "nuxt generate",
+    "generate": "yon fetch-content && nuxt generate",
     "fetch-content": "node fetchAndProcessContent.js"
   },
   "dependencies": {
