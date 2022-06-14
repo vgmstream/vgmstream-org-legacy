@@ -19,7 +19,7 @@
     "bootstrap-vue": "2.21.2",
     "core-js": "3.23.0",
     "glob": "^8.0.3",
-    "isomorphic-git": "^1.17.3",
+    "isomorphic-git": "^1.18.1",
     "js-yaml": "^4.0.0",
     "nuxt": "2.15.8",
     "remark": "^14.0.2",
